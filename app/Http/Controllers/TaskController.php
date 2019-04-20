@@ -13,15 +13,10 @@ class TaskController extends Controller
 
     public function index()
     {
-        //ログインユーザーのuser.idを取得
         $id = auth()->user()->id;
-        //Userモデルから全データを取得
         $user = User::find($id);
 
-        //ユーザーに紐づくタスクをforeach文で回し、
-        foreach ($user->tasks as $task) {
-             echo 'タスク名：' . $task->name . '<br>';
-        }
+        return view('tasks.index', compact('user'));
     }
 
     public function store()

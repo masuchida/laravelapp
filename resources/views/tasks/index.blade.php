@@ -6,7 +6,7 @@
 
     <div class="panel-body">
         <!-- バリデーションエラーの表示 -->
-    @include('common.errors')
+{{--    @include('common.errors')--}}
 
     <!-- 新タスクフォーム -->
         <form action="/task" method="POST" class="form-horizontal">
@@ -14,7 +14,7 @@
 
         <!-- タスク名 -->
             <div class="form-group">
-                <label for="task-name" class="col-sm-3 control-label">Task</label>
+                <label for="task-name" class="col-sm-3 control-label">Regist Form</label>
 
                 <div class="col-sm-6">
                     <input type="text" name="name" id="task-name" class="form-control">
@@ -32,5 +32,14 @@
         </form>
     </div>
 
-    <!-- TODO: 現在のタスク -->
+    <!-- 現在のタスク -->
+    <div class="form-group">
+        <label for="task-name" class="col-sm-3 control-label">Current Tasks</label>
+        <div class="col-sm-6">
+            @foreach($user->tasks as $task)
+                <p>{{$task->id}} : {{ $task->name }}</p>
+            @endforeach
+        </div>
+    </div>
+
 @endsection

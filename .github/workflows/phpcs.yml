@@ -1,14 +1,16 @@
-name: php-cs-fixer
-on: [pull_request]
+name: PHPCS check
+
+on: pull_request
 
 jobs:
-  php-cs-fixer:
+  phpcs:
+    name: PHPCS
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Prepare
-        run: |
-          wget https://cs.symfony.com/download/php-cs-fixer-v2.phar -O php-cs-fixer
-          chmod a+x php-cs-fixer
-      - name: php-cs-fixer
-        run: php php-cs-fixer fix ./app --dry-run
+      - name: Install dependencies
+        run: composer install --dev --prefer-dist --no-progress --no-suggest
+        uses: chekalsky/phpcs-action@v1
+        with:
+          enable_warnings: true
+          phpcs_bin_path: './vendor/bin/phpcs'

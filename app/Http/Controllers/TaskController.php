@@ -26,6 +26,7 @@ class TaskController extends Controller
         $fuga="fuga";
         $fuga="fuga";
         $fuga="fuga";
+        $fuga="fuga";
         return view('tasks.index', [
             'tasks' => $this->tasks->forUser($request->user()),
         ]);

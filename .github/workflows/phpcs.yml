@@ -28,3 +28,6 @@ jobs:
           phpcs_path: php phpcs.phar
           standard: PSR2
           fail_on_warnings: true
+      runs:
+        using: 'node12'
+        main: 'dist/index.js'

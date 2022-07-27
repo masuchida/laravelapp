@@ -27,4 +27,4 @@ jobs:
           scope: blame
           phpcs_path: php phpcs.phar
           standard: PSR2
-          fail_on_warnings: false
+          fail_on_warnings: true

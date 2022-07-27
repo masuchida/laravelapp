@@ -23,9 +23,6 @@ class TaskController extends Controller
     public function index(Request $request)
     {
         $hoge="hoge";
-        $fuga="fuga";
-        $fuga="fuga";
-        $fuga="fuga";
         return view('tasks.index', [
             'tasks' => $this->tasks->forUser($request->user()),
         ]);

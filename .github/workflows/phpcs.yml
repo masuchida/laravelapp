@@ -26,12 +26,5 @@ jobs:
         with:
           scope: blame
           phpcs_path: php phpcs.phar
-          standard: PSR2
+          standard: PSR12
           fail_on_warnings: true
-      runs:
-        using: 'node12'
-        main: 'dist/index.js'
-
-      branding:
-        icon: 'wind'
-        color: 'green'

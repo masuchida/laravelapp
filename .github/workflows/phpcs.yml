@@ -25,5 +25,5 @@ jobs:
       - uses: thenabeel/action-phpcs@v8
         with:
           scope: blame
-          phpcs_path: php ./vendor/bin/phpcs
+          phpcs_path: './vendor/bin/phpcs'
           standard: PSR12

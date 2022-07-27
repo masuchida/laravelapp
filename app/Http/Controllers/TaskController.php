@@ -20,7 +20,7 @@ class TaskController extends Controller
         $this->tasks = $tasks;
     }
 
-    public function index(Request $request)
+    public       function           index           (Request $request)
     {
         $hoge="hoge";
         $hoge="hoge";
